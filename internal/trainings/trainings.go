@@ -11,7 +11,6 @@ import (
 )
 
 type Training struct {
-	// TODO: добавить поля
 	personaldata.Personal
 	Steps        int
 	TrainingType string
@@ -19,7 +18,6 @@ type Training struct {
 }
 
 func (t *Training) Parse(datastring string) (err error) {
-	// TODO: реализовать функцию
 	parts := strings.Split(datastring, ",")
 	if len(parts) < 3 {
 		return fmt.Errorf("ожидалось элементов: 3, получено: %d", len(parts))
@@ -55,7 +53,6 @@ func (t *Training) Parse(datastring string) (err error) {
 }
 
 func (t Training) ActionInfo() (string, error) {
-	// TODO: реализовать функцию
 	distance := spentenergy.Distance(t.Steps, t.Height)
 	averageSpeed := spentenergy.MeanSpeed(t.Steps, t.Height, t.Duration)
 

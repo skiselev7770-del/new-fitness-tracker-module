@@ -11,14 +11,12 @@ import (
 )
 
 type DaySteps struct {
-	// TODO: добавить поля
 	personaldata.Personal
 	Steps    int
 	Duration time.Duration
 }
 
 func (ds *DaySteps) Parse(datastring string) (err error) {
-	// TODO: реализовать функцию
 	parts := strings.Split(datastring, ",")
 	if len(parts) < 2 {
 		return fmt.Errorf("ожидалось элементов: 2, получено: %d", len(parts))
@@ -51,7 +49,6 @@ func (ds *DaySteps) Parse(datastring string) (err error) {
 }
 
 func (ds DaySteps) ActionInfo() (string, error) {
-	// TODO: реализовать функцию
 	distance := spentenergy.Distance(ds.Steps, ds.Height)
 	spentCalories, err := spentenergy.WalkingSpentCalories(ds.Steps, ds.Weight, ds.Height, ds.Duration)
 	if err != nil {
